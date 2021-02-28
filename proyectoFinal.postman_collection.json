@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "be559674-acdf-4599-abfb-5e2d9981336e",
+		"name": "proyectoFinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "new cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9000/cliente/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cliente cedula",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/cliente/get/1900823236",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"get",
+								"1900823236"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/cliente/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente delete",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/cliente/delete/11111111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"delete",
+								"11111111"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Libros",
+			"item": [
+				{
+					"name": "new libro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isbn\": \"11111111\",\n    \"nombre\": \"La Iliada\",\n    \"tipo\": \"revista\",\n    \"autor\": \"Monika Zgustova\",\n    \"idioma\": \"English\",\n    \"precio\": 50.00,\n    \"cantidad\": 70,\n    \"date_created\": \"2021-02-25 04:14:33.286740\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/libro/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"libro",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "libro all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/libro/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"libro",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get libro isbn",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/libro/get/0-7645-2641-3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"libro",
+								"get",
+								"0-7645-2641-3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete libro",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9000/libro/delete/11111111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"libro",
+								"delete",
+								"11111111"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Venta_Libros",
+			"item": [
+				{
+					"name": "ventas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fecha\":\"2021-01-28 15:42:30\",\n    \"cantlibros\":10,\n    \"descripcion\":\"Negocio\",\n    \"date_created\":\"2021-01-28 15:42:30\",\n    \"updated_ad\":\"2021-01-28 15:42:30\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/venta/vender/1900823236/12-453-678-34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"venta",
+								"vender",
+								"1900823236",
+								"12-453-678-34"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/usuario/ingresar",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"usuario",
+						"ingresar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "jaimepaqui",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/usuario/salir",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"usuario",
+						"salir"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

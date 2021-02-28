@@ -1,0 +1,57 @@
+{% extends 'master.html' %}
+{% block contenido %}
+
+<h4>Modificar   Libro</h4>
+<div class="container">
+    <form method="POST"> {% csrf_token %}
+        <div class="form-group">
+            <label for="id_isbn">ISBN:</label> 
+            <input type="text" class="form-control" name="isbn" value="{{formulario_libro.isbn.value}}" maxlength="20" required id="id_isbn">
+        </div><br>
+        <div class="form-group">
+            <label for="id_nombre">Titulo:</label>
+            <input type="text" class="form-control" name="nombre" value="{{formulario_libro.nombre.value}}" maxlength="70" required id="id_nombre">
+        </div><br>
+        <div class="form-group">
+            <label for="id_autor">Autor:</label>
+            <input type="text" class="form-control" name="autor" value="{{formulario_libro.autor.value}}" maxlength="70" required id="id_autor">
+        </div><br>
+
+        <div class="form-group">
+            <label for="id_idioma">Idioma:</label>
+            <input type="text" class="form-control" name="idioma" value="{{formulario_libro.idioma.value}}" maxlength="70" required id="id_idioma">
+        </div><br>
+
+        <div class="form-group">
+            <label for="id_tipo">Tipo Libro:</label> 
+            <select name="tipo" class="form-control" id="id_tipo">
+                {% if formulario_libro.tipo.value == 'revista' %}
+                <option value="revista">Revista</option>
+                <option value="novelas">Novela</option>
+                <option value="literatura">Literatura</option>
+                {% elif formulario_libro.tipo.value == 'novelas' %}
+                <option value="revista">Revista</option>
+                <option value="novelas">Novela</option>
+                <option value="literatura">Literatura</option>
+                {% elif formulario_libro.tipo.value == 'literatura' %}
+                <option value="revista">Revista</option>
+                <option value="novelas">Novela</option>
+                <option value="literatura">Literatura</option>
+                {% endif %}
+            </select>
+        </div><br>
+        <div class="form-group">
+            <label for="id_precio">Precio:</label> 
+            <input type="number" class="form-control" name="precio" value="{{formulario_libro.precio.value}}" step="0.01" required id="id_precio">
+        </div><br>
+        <div class="form-group">
+            <label for="id_cantidad">Cantidad:</label> 
+            <input type="number" class="form-control" name="cantidad" value="{{formulario_libro.cantidad.value}}" step="0.02" required id="id_cantidad">
+        </div><br>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Modificar Libro</button>
+        </div><br>
+    </form>
+</div>
+{% endblock %}
+

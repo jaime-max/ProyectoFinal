@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% block contenido %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td><strong>Cliente: </strong> {{cliente.nombres}} {{cliente.apellidos}}</td>
+                <td><strong>Cedula: </strong>{{cliente.cedula}}</td>
+                <td><strong>Correo: </strong>{{cliente.correo}}</td>
+            </tr>    
+        </thead>
+    </table>
+    <p><strong>Valor a Cancelar:</strong>{{ total }}</p>
+</div>
+{% endblock %}

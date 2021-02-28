@@ -1,0 +1,51 @@
+{% extends 'master.html' %}
+{% block contenido %}
+
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <h4>Lista de Libros</h4>
+        <form class="d-flex" method="POST">{% csrf_token %}
+            <input  class="form-control" name="busqueda" placeholder="Ingrese su Busqueda"
+                aria-label="busqueda">
+            <button style="margin-left: 10px" class="btn btn-primary" type="submit">Buscar</button>
+            <a style="margin-left: 10px" class="btn btn-primary" href="{% url 'crear_libros'  %}" role="button">Agregar Libros</a>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr class="table-dark">
+                <th>ISBN</th>
+                <th>Titulo</th>
+                <th>Tipo</th>
+                <th>Autor</th>
+                <th>Idioma</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for libro in  listaLibros %}
+                <tr>
+                    <th scope="col">{{libro.isbn}}</th>
+                    <th scope="col">{{libro.nombre}}</th>
+                    <th scope="col">{{libro.tipo}}</th>
+                    <th scope="col">{{libro.autor}}</th>
+                    <th scope="col">{{libro.idioma}}</th>
+                    <th scope="col">{{libro.precio}}</th>
+                    <th scope="col">{{libro.cantidad}}</th>
+                    <th class="table-danger">
+                        <a class="btn btn-primary" role="button" href="{% url 'eliminar_libro' libro.isbn %}">Eliminar</a>
+                        <a class="btn btn-primary" role="button" href="{% url 'modificar_libro' libro.isbn %}">Editar</a>
+                    </th>
+                </tr>
+                
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

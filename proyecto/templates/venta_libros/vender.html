@@ -1,0 +1,35 @@
+{% extends 'master.html' %}
+{% block contenido %}
+
+<h4>Vender</h4>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td><strong>Codigo: </strong> {{libro.isbn}}</td>
+                <td><strong>Tipo: </strong>{{libro.tipo}}</td>
+                <td><strong>Autor: </strong>{{libro.autor}}</td>
+                <td><strong>Precio: </strong>{{libro.precio}}</td>
+            </tr>    
+        </thead>
+    </table>
+    <form method="POST">{% csrf_token %} 
+        <div class="form-group">
+            <label for="id_cantlibros">Ingrese Cantidad de Libros:</label> 
+            <input type="number" class="form-control" name="cantlibros"  required id="id_cantlibros">
+        </div><br>
+        <div class="form-group">
+            <label for="id_descripcion">Descripcion:</label> 
+            <textarea name="descripcion" class="form-control" cols="40" rows="10" required id="id_descripcion">
+            </textarea>
+        </div><br>
+        <div class="form-group">
+            <input class="btn btn-primary" class="form-control" type="submit" value="Vender">
+        </div><br>
+        <div class="form-group">
+            <a class="btn btn-primary btn-lg" href="{% url 'get_libro'  cliente.cedula  total %}" role="button">Regresar</a>
+        </div><br>
+    </form>
+</div>
+
+{% endblock %}
